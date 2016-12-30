@@ -1,0 +1,29 @@
+{
+  "name": "inspiry-stripe-payments",
+  "version": "1.0.0",
+  "description": "A plugin to add stripe payment to publish a property",
+  "main": "",
+  "scripts": {
+    "test": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/InspiryThemes/inspiry-stripe-payments.git"
+  },
+  "keywords": [
+    "stripe",
+    "inspiry-themes",
+    "plugin"
+  ],
+  "author": "Ashar Irfan",
+  "license": "GPL-2.0",
+  "bugs": {
+    "url": "https://github.com/InspiryThemes/inspiry-stripe-payments/issues"
+  },
+  "homepage": "https://github.com/InspiryThemes/inspiry-stripe-payments#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-notify": "^2.2.0",
+    "gulp-zip": "^3.2.0"
+  }
+}

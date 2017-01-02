@@ -158,6 +158,16 @@ if ( ! class_exists( 'ISP_Settings' ) ) {
 									<label class="description" for="isp_settings[publish_property]"><?php _e('No', 'inspiry-stripe'); ?></label>
 								</td>
 							</tr>
+
+							<tr valign="top">
+								<th scope="row" valign="top">
+									<?php _e( 'Payment Button Label', 'inspiry-stripe' ); ?>
+								</th>
+								<td>
+									<input id="isp_settings[button_label]" name="isp_settings[button_label]" class="regular-text" type="text" value="<?php echo $isp_options['button_label']; ?>"/>
+									<label class="description" for="isp_settings[button_label]"><?php _e( 'Default: Pay Now', 'inspiry-stripe' ); ?></label>
+								</td>
+							</tr>
 						</tbody>
 					</table>
 

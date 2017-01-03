@@ -1,13 +1,17 @@
 <?php
 /**
- * ISP Settings
+ * ISP Settings Class
  *
- * @since 1.0.0
+ * This class is used to initialize the settings page of this plugin.
+ *
+ * @since 	1.0.0
+ * @package ISP
  */
 
 
+// Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly.
+	exit;
 }
 
 
@@ -61,7 +65,7 @@ if ( ! class_exists( 'ISP_Settings' ) ) {
 		 * @since  1.0.0
 		 */
 		public function isp_render_options_page() {
-			global $isp_options;
+			$isp_options = get_option( 'isp_settings' );
 			?>
 			<div class="wrap">
 				<h2><?php _e( 'Inspiry Stripe Payments Settings', 'inspiry-stripe' ); ?></h2>
@@ -165,7 +169,7 @@ if ( ! class_exists( 'ISP_Settings' ) ) {
 								</th>
 								<td>
 									<input id="isp_settings[button_label]" name="isp_settings[button_label]" class="regular-text" type="text" value="<?php echo $isp_options['button_label']; ?>"/>
-									<label class="description" for="isp_settings[button_label]"><?php _e( 'Default: Pay Now', 'inspiry-stripe' ); ?></label>
+									<label class="description" for="isp_settings[button_label]"><?php _e( 'Default: Pay with Card', 'inspiry-stripe' ); ?></label>
 								</td>
 							</tr>
 						</tbody>

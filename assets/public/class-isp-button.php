@@ -48,9 +48,15 @@ if ( ! class_exists( 'ISP_Payment_Button' ) ) {
 
 			$isp_options = get_option( 'isp_settings' );
 
+			// Set the default currency code.
+			$currency_code 	= $isp_options[ 'currency_code' ];
+			if ( empty( $currency_code ) ) {
+				$currency_code 	= 'USD';
+			}
+
 			// Amount being charged.
 			$amount = $isp_options[ 'amount' ];
-			if ( ! empty( $amount ) && 'USD' == $isp_options[ 'currency_code' ] ) {
+			if ( ! empty( $amount ) && 'USD' == $currency_code ) {
 				$amount = $amount * 100;
 			} else {
 				$amount = 0;
@@ -75,7 +81,7 @@ if ( ! class_exists( 'ISP_Payment_Button' ) ) {
 					data-key="<?php echo esc_attr( $publishable_key ); ?>"
 					data-amount="<?php echo esc_attr( $amount ); ?>"
 					data-name="<?php echo get_bloginfo( 'name' ); ?>"
-					data-currency="<?php echo esc_attr( $isp_options[ 'currency_code' ] ); ?>"
+					data-currency="<?php echo esc_attr( $currency_code ); ?>"
 					data-description="<?php _e( 'Property Payment', 'inspiry-stripe' ); ?>"
 					data-locale="auto"
 					data-billing-address="true"

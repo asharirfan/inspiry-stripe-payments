@@ -1,16 +1,6 @@
 # Inspiry Stripe Payments
-Contributors: mrasharirfan
-Tags: E-commerce, Payments, Stripe, Stripe Checkout
-Requires at least: 4.7
-Tested up to: 4.7
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-A simple, light weight plugin to add stripe payment system to your WordPress site using a simple shortcode.
-
-== Description ==
-
-This plugin provides a simple way to introduce stripe checkout payment system in your WordPress site using shortcode. For shortcode details, please consult the documentation below.
+A simple, light weight plugin to add stripe payment to your WordPress site using a simple shortcode.
 
 ### Features
 
@@ -52,22 +42,8 @@ This plugin provides a simple way to introduce stripe checkout payment system in
 * To turn on the `bitcoin` feature of stripe.
     `[isp_button bitcoin="true"]`
 
-### Links
-
-- [GitHub Repository](https://github.com/InspiryThemes/inspiry-stripe-payments)
-
-== Installation ==
+## Installation
 
 1. Unzip the downloaded package
-1. Upload `inspiry-stripe-payments` to the `/wp-content/plugins/` directory
-1. Activate the `Inspiry Stripe Payments` through the 'Plugins' menu in WordPress
-
-== Frequently Asked Questions ==
-
-== Screenshots ==
-
-== Changelog ==
-
-= 1.0.0 =
-* Initial Release
-
+2. Upload `inspiry-stripe-payments` to the `/wp-content/plugins/` directory
+3. Activate the `Inspiry Stripe Payments` through the 'Plugins' menu in WordPress

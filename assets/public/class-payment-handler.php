@@ -95,7 +95,12 @@ if ( ! class_exists( 'ISP_Payment_Handler' ) ) {
 			}
 
 			// Set currency code.
-			$this->currency_code 	= $isp_options[ 'currency_code' ];
+			$this->currency_code 		= $isp_options[ 'currency_code' ];
+
+			// Set the default currency code.
+			if ( empty( $this->currency_code ) ) {
+				$this->currency_code 	= 'USD';
+			}
 
 			// Set customer details.
 			$this->customer_details	= array(

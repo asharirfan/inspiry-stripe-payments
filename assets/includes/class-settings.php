@@ -148,33 +148,35 @@ if ( ! class_exists( 'ISP_Settings' ) ) {
 						</tbody>
 					</table>
 
-					<h3 class="title"><?php _e( 'Theme Settings', 'inspiry-stripe' ); ?></h3>
-					<p class="description"><?php _e( 'Note: Ignore these settings if you are not using <a href="https://inspirythemes.com/theme-category/real-estate/" target="_blank">Real Estate Themes</a> from <a href="https://inspirythemes.com" target="_blank">Inspiry Themes</a>.', 'inspiry-stripe' ); ?></p>
-					<table class="form-table">
-						<tbody>
-							<tr valign="top">
-								<th scope="row" valign="top">
-									<?php _e( 'Payment Amount Per Property', 'inspiry-stripe' ); ?>
-								</th>
-								<td>
-									<input id="isp_settings[amount]" name="isp_settings[amount]" class="regular-text" type="text" value="<?php echo $isp_options['amount']; ?>"/>
-									<label class="description" for="isp_settings[amount]"><?php _e( 'Provide the amount that you want to charge for one property. Example: 20.00', 'inspiry-stripe' ); ?></label>
-								</td>
-							</tr>
+					<?php if ( 'RealHomes Theme' == wp_get_theme()->name || 'RealHomes Theme' == wp_get_theme()->parent_theme ) : ?>
+						<h3 class="title"><?php _e( 'Theme Settings', 'inspiry-stripe' ); ?></h3>
+						<p class="description"><?php _e( 'Note: Ignore these settings if you are not using <a href="https://inspirythemes.com/theme-category/real-estate/" target="_blank">Real Estate Themes</a> from <a href="https://inspirythemes.com" target="_blank">Inspiry Themes</a>.', 'inspiry-stripe' ); ?></p>
+						<table class="form-table">
+							<tbody>
+								<tr valign="top">
+									<th scope="row" valign="top">
+										<?php _e( 'Payment Amount Per Property', 'inspiry-stripe' ); ?>
+									</th>
+									<td>
+										<input id="isp_settings[amount]" name="isp_settings[amount]" class="regular-text" type="text" value="<?php echo $isp_options['amount']; ?>"/>
+										<label class="description" for="isp_settings[amount]"><?php _e( 'Provide the amount that you want to charge for one property. Example: 20.00', 'inspiry-stripe' ); ?></label>
+									</td>
+								</tr>
 
-							<tr valign="top">
-								<th scope="row" valign="top">
-									<?php _e( 'Publish Submitted Property after Payment', 'inspiry-stripe' ); ?>
-								</th>
-								<td>
-									<input id="isp_settings[publish_property]" name="isp_settings[publish_property]" type="radio" value="1" <?php checked(1, $isp_options['publish_property'], true); ?> />
-									<label class="description" for="isp_settings[publish_property]"><?php _e('Yes', 'inspiry-stripe'); ?></label>
-									<input id="isp_settings[publish_property]" name="isp_settings[publish_property]" type="radio" value="0" <?php checked(0, $isp_options['publish_property'], true); ?> />
-									<label class="description" for="isp_settings[publish_property]"><?php _e('No', 'inspiry-stripe'); ?></label>
-								</td>
-							</tr>
-						</tbody>
-					</table>
+								<tr valign="top">
+									<th scope="row" valign="top">
+										<?php _e( 'Publish Submitted Property after Payment', 'inspiry-stripe' ); ?>
+									</th>
+									<td>
+										<input id="isp_settings[publish_property]" name="isp_settings[publish_property]" type="radio" value="1" <?php checked(1, $isp_options['publish_property'], true); ?> />
+										<label class="description" for="isp_settings[publish_property]"><?php _e('Yes', 'inspiry-stripe'); ?></label>
+										<input id="isp_settings[publish_property]" name="isp_settings[publish_property]" type="radio" value="0" <?php checked(0, $isp_options['publish_property'], true); ?> />
+										<label class="description" for="isp_settings[publish_property]"><?php _e('No', 'inspiry-stripe'); ?></label>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					<?php endif; ?>
 
 					<p class="submit">
 						<input type="submit" class="button-primary" value="<?php _e( 'Save Options', 'inspiry-stripe' ); ?>" />

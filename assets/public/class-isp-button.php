@@ -56,7 +56,7 @@ if ( ! class_exists( 'ISP_Payment_Button' ) ) {
 
 			// Amount being charged.
 			$amount = $isp_options[ 'amount' ];
-			if ( ! empty( $amount ) && 'USD' == $currency_code ) {
+			if ( ! empty( $amount ) ) {
 				$amount = $amount * 100;
 			} else {
 				$amount = 0;

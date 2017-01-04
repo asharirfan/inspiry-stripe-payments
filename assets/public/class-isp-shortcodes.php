@@ -65,12 +65,12 @@ if ( ! class_exists( 'ISP_Shortcodes' ) ) {
 			if ( isset( $args[ 'currency' ] ) && ! empty( $args[ 'currency' ] ) ) {
 				$currency_code	= $args[ 'currency' ];
 			} else {
-				$currency_code	= 'USD';
+				$currency_code	= $isp_options[ 'currency_code' ];
 			}
 
 			// Amount being charged.
 			$amount = $args[ 'amount' ];
-			if ( ! empty( $amount ) && 'USD' == $currency_code ) {
+			if ( ! empty( $amount ) ) {
 				$amount = $amount * 100;
 			} else {
 				$amount = 0;

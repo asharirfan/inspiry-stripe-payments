@@ -73,6 +73,7 @@ if ( ! class_exists( 'ISP_Settings' ) ) {
 
 					<?php settings_fields( 'isp_settings_group' ); ?>
 
+					<h3 class="title"><?php _e( 'Stripe Settings', 'inspiry-stripe' ); ?></h3>
 					<table class="form-table">
 						<tbody>
 							<tr valign="top">
@@ -84,12 +85,7 @@ if ( ! class_exists( 'ISP_Settings' ) ) {
 									<label class="description" for="isp_settings[test_mode]"><?php _e( 'Check this to use the plugin in test mode.', 'inspiry-stripe' ); ?></label>
 								</td>
 							</tr>
-						</tbody>
-					</table>
 
-					<h3 class="title"><?php _e( 'API Keys', 'inspiry-stripe' ); ?></h3>
-					<table class="form-table">
-						<tbody>
 							<tr valign="top">
 								<th scope="row" valign="top">
 									<?php _e( 'Live Secret', 'inspiry-stripe' ); ?>
@@ -99,6 +95,7 @@ if ( ! class_exists( 'ISP_Settings' ) ) {
 									<label class="description" for="isp_settings[live_secret_key]"><?php _e('Paste your live secret key.', 'inspiry-stripe'); ?></label>
 								</td>
 							</tr>
+
 							<tr valign="top">
 								<th scope="row" valign="top">
 									<?php _e( 'Live Publishable', 'inspiry-stripe' ); ?>
@@ -108,6 +105,7 @@ if ( ! class_exists( 'ISP_Settings' ) ) {
 									<label class="description" for="isp_settings[live_publishable_key]"><?php _e('Paste your live publishable key.', 'inspiry-stripe'); ?></label>
 								</td>
 							</tr>
+
 							<tr valign="top">
 								<th scope="row" valign="top">
 									<?php _e( 'Test Secret', 'inspiry-stripe' ); ?>
@@ -117,6 +115,7 @@ if ( ! class_exists( 'ISP_Settings' ) ) {
 									<label class="description" for="isp_settings[test_secret_key]"><?php _e('Paste your test secret key.', 'inspiry-stripe'); ?></label>
 								</td>
 							</tr>
+
 							<tr valign="top">
 								<th scope="row" valign="top">
 									<?php _e( 'Test Publishable', 'inspiry-stripe' ); ?>
@@ -124,20 +123,6 @@ if ( ! class_exists( 'ISP_Settings' ) ) {
 								<td>
 									<input id="isp_settings[test_publishable_key]" name="isp_settings[test_publishable_key]" class="regular-text" type="text" value="<?php echo $isp_options['test_publishable_key']; ?>"/>
 									<label class="description" for="isp_settings[test_publishable_key]"><?php _e('Paste your test publishable key.', 'inspiry-stripe'); ?></label>
-								</td>
-							</tr>
-						</tbody>
-					</table>
-
-					<table class="form-table">
-						<tbody>
-							<tr valign="top">
-								<th scope="row" valign="top">
-									<?php _e( 'Payment Amount Per Property', 'inspiry-stripe' ); ?>
-								</th>
-								<td>
-									<input id="isp_settings[amount]" name="isp_settings[amount]" class="regular-text" type="text" value="<?php echo $isp_options['amount']; ?>"/>
-									<label class="description" for="isp_settings[amount]"><?php _e( 'Provide the amount that you want to charge for one property. Example: 20.00', 'inspiry-stripe' ); ?></label>
 								</td>
 							</tr>
 
@@ -153,6 +138,32 @@ if ( ! class_exists( 'ISP_Settings' ) ) {
 
 							<tr valign="top">
 								<th scope="row" valign="top">
+									<?php _e( 'Payment Button Label', 'inspiry-stripe' ); ?>
+								</th>
+								<td>
+									<input id="isp_settings[button_label]" name="isp_settings[button_label]" class="regular-text" type="text" value="<?php echo $isp_options['button_label']; ?>"/>
+									<label class="description" for="isp_settings[button_label]"><?php _e( 'Default: Pay with Card', 'inspiry-stripe' ); ?></label>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+
+					<h3 class="title"><?php _e( 'Theme Settings', 'inspiry-stripe' ); ?></h3>
+					<p class="description"><?php _e( 'Note: Ignore these settings if you are not using <a href="https://inspirythemes.com/theme-category/real-estate/" target="_blank">Real Estate Themes</a> from <a href="https://inspirythemes.com" target="_blank">Inspiry Themes</a>.', 'inspiry-stripe' ); ?></p>
+					<table class="form-table">
+						<tbody>
+							<tr valign="top">
+								<th scope="row" valign="top">
+									<?php _e( 'Payment Amount Per Property', 'inspiry-stripe' ); ?>
+								</th>
+								<td>
+									<input id="isp_settings[amount]" name="isp_settings[amount]" class="regular-text" type="text" value="<?php echo $isp_options['amount']; ?>"/>
+									<label class="description" for="isp_settings[amount]"><?php _e( 'Provide the amount that you want to charge for one property. Example: 20.00', 'inspiry-stripe' ); ?></label>
+								</td>
+							</tr>
+
+							<tr valign="top">
+								<th scope="row" valign="top">
 									<?php _e( 'Publish Submitted Property after Payment', 'inspiry-stripe' ); ?>
 								</th>
 								<td>
@@ -160,16 +171,6 @@ if ( ! class_exists( 'ISP_Settings' ) ) {
 									<label class="description" for="isp_settings[publish_property]"><?php _e('Yes', 'inspiry-stripe'); ?></label>
 									<input id="isp_settings[publish_property]" name="isp_settings[publish_property]" type="radio" value="0" <?php checked(0, $isp_options['publish_property'], true); ?> />
 									<label class="description" for="isp_settings[publish_property]"><?php _e('No', 'inspiry-stripe'); ?></label>
-								</td>
-							</tr>
-
-							<tr valign="top">
-								<th scope="row" valign="top">
-									<?php _e( 'Payment Button Label', 'inspiry-stripe' ); ?>
-								</th>
-								<td>
-									<input id="isp_settings[button_label]" name="isp_settings[button_label]" class="regular-text" type="text" value="<?php echo $isp_options['button_label']; ?>"/>
-									<label class="description" for="isp_settings[button_label]"><?php _e( 'Default: Pay with Card', 'inspiry-stripe' ); ?></label>
 								</td>
 							</tr>
 						</tbody>

@@ -51,8 +51,8 @@ if ( ! class_exists( 'ISP_Settings' ) ) {
 		 */
 		public function isp_settings_setup() {
 			add_options_page(
-				'ISP Settings',
-				'ISP Settings',
+				'Inspiry Stripe Payments',
+				'Inspiry Stripe Payments',
 				'manage_options',
 				'isp-settings',
 				array( $this, 'isp_render_options_page' )

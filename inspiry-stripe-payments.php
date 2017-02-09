@@ -126,15 +126,13 @@ if ( ! class_exists( 'Inspiry_Stripe_Payments' ) ) :
 		 */
 		public function load_files() {
 
-			$isp_options = $this->isp_options;
-
 			/**
 			 * class-settings.php
 			 *
 			 * Settings class file of the plugin.
 			 */
-			if ( is_admin() && file_exists( ISP_BASE_DIR . '/assets/includes/class-settings.php' ) ) {
-				require_once( ISP_BASE_DIR . '/assets/includes/class-settings.php' );
+			if ( is_admin() && file_exists( ISP_BASE_DIR . '/assets/includes/class-isp-settings.php' ) ) {
+				include_once( ISP_BASE_DIR . '/assets/includes/class-isp-settings.php' );
 			}
 
 			/**
@@ -143,7 +141,7 @@ if ( ! class_exists( 'Inspiry_Stripe_Payments' ) ) :
 			 * Class file for shortcodes of ISP.
 			 */
 			if ( file_exists( ISP_BASE_DIR . '/assets/public/class-isp-shortcodes.php' ) ) {
-				require_once( ISP_BASE_DIR . '/assets/public/class-isp-shortcodes.php' );
+				include_once( ISP_BASE_DIR . '/assets/public/class-isp-shortcodes.php' );
 			}
 
 			/**
@@ -152,7 +150,7 @@ if ( ! class_exists( 'Inspiry_Stripe_Payments' ) ) :
 			 * Class file for payment button for properties.
 			 */
 			if ( file_exists( ISP_BASE_DIR . '/assets/public/class-isp-button.php' ) ) {
-				require_once( ISP_BASE_DIR . '/assets/public/class-isp-button.php' );
+				include_once( ISP_BASE_DIR . '/assets/public/class-isp-button.php' );
 			}
 
 			/**
@@ -161,7 +159,7 @@ if ( ! class_exists( 'Inspiry_Stripe_Payments' ) ) :
 			 * Class file for payment handler functions.
 			 */
 			if ( file_exists( ISP_BASE_DIR . '/assets/public/class-payment-handler.php' ) ) {
-				require_once( ISP_BASE_DIR . '/assets/public/class-payment-handler.php' );
+				include_once( ISP_BASE_DIR . '/assets/public/class-payment-handler.php' );
 			}
 
 		}
@@ -172,10 +170,6 @@ if ( ! class_exists( 'Inspiry_Stripe_Payments' ) ) :
 		 * @since 1.0.0
 		 */
 		public function run() {
-
-			if ( class_exists( 'ISP_Settings' ) ) {
-				$settings = new ISP_Settings();
-			}
 
 			if ( class_exists( 'ISP_Shortcodes' ) ) {
 				$shortcodes = new ISP_Shortcodes();

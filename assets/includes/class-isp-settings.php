@@ -30,17 +30,17 @@ if ( ! class_exists( 'ISP_Settings' ) ) {
 	class ISP_Settings {
 
 		/**
-		 * Class Constructor.
+		 * Initialize settings
 		 *
 		 * @since  1.0.0
 		 */
-		public function __construct() {
+		public static function init() {
 
 			// Add settings page to menu.
-			add_action( 'admin_menu', array( $this, 'isp_settings_setup' ) );
+			add_action( 'admin_menu', array( __CLASS__, 'isp_settings_setup' ) );
 
 			// Register page settings.
-			add_action( 'admin_init', array( $this, 'isp_register_settings' ) );
+			add_action( 'admin_init', array( __CLASS__, 'isp_register_settings' ) );
 
 		}
 
@@ -49,13 +49,13 @@ if ( ! class_exists( 'ISP_Settings' ) ) {
 		 *
 		 * @since  1.0.0
 		 */
-		public function isp_settings_setup() {
+		public static function isp_settings_setup() {
 			add_options_page(
 				'Inspiry Stripe Payments',
 				'Inspiry Stripe Payments',
 				'manage_options',
 				'isp-settings',
-				array( $this, 'isp_render_options_page' )
+				array( __CLASS__, 'isp_render_options_page' )
 			);
 		}
 
@@ -64,8 +64,10 @@ if ( ! class_exists( 'ISP_Settings' ) ) {
 		 *
 		 * @since  1.0.0
 		 */
-		public function isp_render_options_page() {
+		public static function isp_render_options_page() {
+
 			$isp_options = get_option( 'isp_settings' );
+
 			?>
 			<div class="wrap">
 				<h2><?php _e( 'Inspiry Stripe Payments Settings', 'inspiry-stripe-payments' ); ?></h2>
@@ -189,10 +191,12 @@ if ( ! class_exists( 'ISP_Settings' ) ) {
 		 *
 		 * @since  1.0.0
 		 */
-		public function isp_register_settings() {
+		public static function isp_register_settings() {
 			register_setting( 'isp_settings_group', 'isp_settings' );
 		}
 
 	}
+
+	ISP_Settings::init();
 
 }

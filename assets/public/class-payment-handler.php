@@ -511,4 +511,6 @@ if ( ! class_exists( 'ISP_Payment_Handler' ) ) {
 
 	}
 
+	new ISP_Payment_Handler();
+
 }

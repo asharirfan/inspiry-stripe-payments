@@ -100,8 +100,7 @@ if ( ! class_exists( 'Inspiry_Stripe_Payments' ) ) :
 			$this->define_constants();
 			$this->plugin_name = 'inspiry-stripe-payments';
 			$this->isp_options = get_option( 'isp_settings' );
-			$this->load_files();
-			$this->run();
+			$this->includes();
 		}
 
 		/**
@@ -124,7 +123,7 @@ if ( ! class_exists( 'Inspiry_Stripe_Payments' ) ) :
 		 *
 		 * @since 1.0.0
 		 */
-		public function load_files() {
+		public function includes() {
 
 			/**
 			 * Initialize settings if in admin
@@ -158,19 +157,6 @@ if ( ! class_exists( 'Inspiry_Stripe_Payments' ) ) :
 			 */
 			if ( file_exists( ISP_BASE_DIR . '/assets/public/class-payment-handler.php' ) ) {
 				include_once( ISP_BASE_DIR . '/assets/public/class-payment-handler.php' );
-			}
-
-		}
-
-		/**
-		 * initialize_classes.
-		 *
-		 * @since 1.0.0
-		 */
-		public function run() {
-
-			if ( class_exists( 'ISP_Payment_Handler' ) ) {
-				$button = new ISP_Payment_Handler();
 			}
 
 		}

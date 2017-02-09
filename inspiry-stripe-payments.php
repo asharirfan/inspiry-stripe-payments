@@ -127,14 +127,12 @@ if ( ! class_exists( 'Inspiry_Stripe_Payments' ) ) :
 		public function load_files() {
 
 			/**
-			 * class-settings.php
-			 *
-			 * Settings class file of the plugin.
+			 * Initialize settings if in admin
 			 */
 			if ( is_admin() && file_exists( ISP_BASE_DIR . '/assets/includes/class-isp-settings.php' ) ) {
 				include_once( ISP_BASE_DIR . '/assets/includes/class-isp-settings.php' );
 			}
-
+			
 			/**
 			 * class-isp-shortcodes.php
 			 *
@@ -170,10 +168,6 @@ if ( ! class_exists( 'Inspiry_Stripe_Payments' ) ) :
 		 * @since 1.0.0
 		 */
 		public function run() {
-
-			if ( class_exists( 'ISP_Shortcodes' ) ) {
-				$shortcodes = new ISP_Shortcodes();
-			}
 
 			if ( class_exists( 'ISP_Payment_Button' ) ) {
 				$button = new ISP_Payment_Button();

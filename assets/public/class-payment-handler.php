@@ -301,7 +301,7 @@ if ( ! class_exists( 'ISP_Payment_Handler' ) ) {
 			$headers[] 		= "Content-Type: text/html; charset=UTF-8";
 			$headers 		= apply_filters( 'isp_payment_successful_header', $headers );
 
-			$subject 		= __( 'Payment Received', 'inspiry-stripe' );
+			$subject 		= __( 'Payment Received', 'inspiry-stripe-payments' );
 			$message		= sprintf( '%s', $subject ) . "<br/><br/>";
 
 			if ( ! empty( $property_id ) ) {
@@ -314,9 +314,9 @@ if ( ! class_exists( 'ISP_Payment_Handler' ) ) {
 				$preview_link = set_url_scheme( get_permalink( $property_id ) );
 				$preview_link = esc_url( apply_filters( 'preview_post_link', add_query_arg( 'preview', 'true', $preview_link ) ) );
 
-				$message 		.= sprintf( __( 'Payment for property %s has been received successfully via Stripe.', 'inspiry-stripe' ), $property_name ) . "<br/><br/>";
+				$message 		.= sprintf( __( 'Payment for property %s has been received successfully via Stripe.', 'inspiry-stripe-payments' ), $property_name ) . "<br/><br/>";
 				if ( ! empty( $preview_link ) ) {
-					$message 	.= __( 'You can preview it here : ', 'inspiry-stripe' );
+					$message 	.= __( 'You can preview it here : ', 'inspiry-stripe-payments' );
 					$message 	.= '<a target="_blank" href="' . $preview_link . '">' . $property_name . '</a>';
 					$message 	.= "<br/><br/>";
 				}
@@ -324,9 +324,9 @@ if ( ! class_exists( 'ISP_Payment_Handler' ) ) {
 			} else {
 
 				if ( isset( $this->customer_details[ 'name' ] ) && ! empty( $this->customer_details[ 'name' ] ) ) {
-					$message 	.= sprintf( __( 'Hi %s,', 'inspiry-stripe' ), $this->customer_details[ 'name' ] ) . "<br/><br/>";
+					$message 	.= sprintf( __( 'Hi %s,', 'inspiry-stripe-payments' ), $this->customer_details[ 'name' ] ) . "<br/><br/>";
 				}
-				$message 		.= sprintf( __( 'Your payment has been received successfully via Stripe.', 'inspiry-stripe' ) ) . "<br/><br/>";
+				$message 		.= sprintf( __( 'Your payment has been received successfully via Stripe.', 'inspiry-stripe-payments' ) ) . "<br/><br/>";
 
 			}
 
@@ -362,7 +362,7 @@ if ( ! class_exists( 'ISP_Payment_Handler' ) ) {
 			$headers[] 		= "Content-Type: text/html; charset=UTF-8";
 			$headers 		= apply_filters( 'isp_payment_successful_header', $headers );
 
-			$subject 		= __( 'Payment Submitted', 'inspiry-stripe' );
+			$subject 		= __( 'Payment Submitted', 'inspiry-stripe-payments' );
 			$message		= sprintf( '%s', $subject ) . "<br/><br/>";
 
 			if ( ! empty( $property_id ) ) {
@@ -375,9 +375,9 @@ if ( ! class_exists( 'ISP_Payment_Handler' ) ) {
 				$preview_link = set_url_scheme( get_permalink( $property_id ) );
 				$preview_link = esc_url( apply_filters( 'preview_post_link', add_query_arg( 'preview', 'true', $preview_link ) ) );
 
-				$message 		.= sprintf( __( 'Payment for property %s has been submitted successfully via Stripe.', 'inspiry-stripe' ), $property_name ) . "<br/><br/>";
+				$message 		.= sprintf( __( 'Payment for property %s has been submitted successfully via Stripe.', 'inspiry-stripe-payments' ), $property_name ) . "<br/><br/>";
 				if ( ! empty( $preview_link ) ) {
-					$message 	.= __( 'You can preview it here : ', 'inspiry-stripe' );
+					$message 	.= __( 'You can preview it here : ', 'inspiry-stripe-payments' );
 					$message 	.= '<a target="_blank" href="' . $preview_link . '">' . $property_name . '</a>';
 					$message 	.= "<br/><br/>";
 				}
@@ -385,11 +385,11 @@ if ( ! class_exists( 'ISP_Payment_Handler' ) ) {
 			} else {
 
 				if ( ! empty( $user_name ) ) {
-					$message	.= sprintf( __( 'Payment has been submitted successfully via Stripe by %s.', 'inspiry-stripe' ), $user_name ) . "<br/><br/>";
+					$message	.= sprintf( __( 'Payment has been submitted successfully via Stripe by %s.', 'inspiry-stripe-payments' ), $user_name ) . "<br/><br/>";
 				} else {
-					$message	.= __( 'Payment has been submitted successfully via Stripe.', 'inspiry-stripe' ) . "<br/><br/>";
+					$message	.= __( 'Payment has been submitted successfully via Stripe.', 'inspiry-stripe-payments' ) . "<br/><br/>";
 				}
-				$message	.= sprintf( __( 'You can contact the customer at %s.', 'inspiry-stripe' ), $user_email ) . "<br/><br/>";
+				$message	.= sprintf( __( 'You can contact the customer at %s.', 'inspiry-stripe-payments' ), $user_email ) . "<br/><br/>";
 
 			}
 

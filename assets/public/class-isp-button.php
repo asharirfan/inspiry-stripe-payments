@@ -82,10 +82,10 @@ if ( ! class_exists( 'ISP_Payment_Button' ) ) {
 					data-amount="<?php echo esc_attr( $amount ); ?>"
 					data-name="<?php echo get_bloginfo( 'name' ); ?>"
 					data-currency="<?php echo esc_attr( $currency_code ); ?>"
-					data-description="<?php _e( 'Property Payment', 'inspiry-stripe' ); ?>"
+					data-description="<?php _e( 'Property Payment', 'inspiry-stripe-payments' ); ?>"
 					data-locale="auto"
 					data-billing-address="true"
-					data-label="<?php _e( $button_label, 'inspiry-stripe' ); ?>">
+					data-label="<?php _e( $button_label, 'inspiry-stripe-payments' ); ?>">
 				</script>
 				<input type="hidden" name="action" value="isp_payment"/>
 				<input type="hidden" name="amount" value="<?php echo esc_attr( $amount ); ?>"/>

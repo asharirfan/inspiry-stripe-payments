@@ -9,7 +9,7 @@
  * Version:         1.0.0
  * License:         GPL-2.0+
  * License URI:     http://www.gnu.org/licenses/gpl-2.0.txt
- * Text Domain:     inspiry-stripe
+ * Text Domain:     inspiry-stripe-payments
  *
  * @link            https://github.com/InspiryThemes/inspiry-stripe-payments
  * @since           1.0.0

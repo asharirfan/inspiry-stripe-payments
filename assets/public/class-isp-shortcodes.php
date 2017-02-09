@@ -104,9 +104,9 @@ if ( ! class_exists( 'ISP_Shortcodes' ) ) {
 			}
 
 			if ( isset( $_GET[ 'payment' ] ) && 'paid' == $_GET[ 'payment' ] ) {
-				echo '<p class="success">' . __( 'Thank you for your payment.', 'inspiry-stripe' ) . '</p>';
+				echo '<p class="success">' . __( 'Thank you for your payment.', 'inspiry-stripe-payments' ) . '</p>';
 			} elseif ( isset( $_GET[ 'payment' ] ) && 'failed' == $_GET[ 'payment' ] ) {
-				echo '<p class="error">' . __( 'Error: Payment was not charged.', 'inspiry-stripe' ) . '</p>';
+				echo '<p class="error">' . __( 'Error: Payment was not charged.', 'inspiry-stripe-payments' ) . '</p>';
 			} else {
 
 				?><form action="" method="POST" class="stripe-button">
@@ -121,7 +121,7 @@ if ( ! class_exists( 'ISP_Shortcodes' ) ) {
 						data-locale="auto"
 						data-billing-address="<?php echo ( isset( $args[ 'billing' ] ) && ( 'true' == $args[ 'billing' ] ) ) ? 'true' : 'false'; ?>"
 						data-shipping-address="<?php echo ( isset( $args[ 'shipping' ] ) && ( 'true' == $args[ 'shipping' ] ) ) ? 'true' : 'false'; ?>"
-						data-label="<?php _e( $button_label, 'inspiry-stripe' ); ?>"
+						data-label="<?php _e( $button_label, 'inspiry-stripe-payments' ); ?>"
 						data-bitcoin="<?php echo ( isset( $args[ 'bitcoin' ] ) && ( 'true' == $args[ 'bitcoin' ] ) ) ? 'true' : 'false'; ?>"
 						data-alipay="<?php echo ( isset( $args[ 'alipay' ] ) && ( 'true' == $args[ 'alipay' ] ) ) ? 'true' : 'false'; ?>"
 						data-allow-remember-me="<?php echo ( isset( $args[ 'remember_user' ] ) && ( 'true' == $args[ 'remember_user' ] ) ) ? 'true' : 'false'; ?>">

@@ -169,10 +169,6 @@ if ( ! class_exists( 'Inspiry_Stripe_Payments' ) ) :
 		 */
 		public function run() {
 
-			if ( class_exists( 'ISP_Payment_Button' ) ) {
-				$button = new ISP_Payment_Button();
-			}
-
 			if ( class_exists( 'ISP_Payment_Handler' ) ) {
 				$button = new ISP_Payment_Handler();
 			}

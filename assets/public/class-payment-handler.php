@@ -295,7 +295,7 @@ if ( ! class_exists( 'ISP_Payment_Handler' ) ) {
 			 * The blogname option is escaped with esc_html on the way into the database in sanitize_option
 			 * we want to reverse this for the plain text arena of emails.
 			 */
-			$website_name = wp_specialchars_decode( get_option( 'blogname' ), ENT_QUOTES );
+			// $website_name = wp_specialchars_decode( get_option( 'blogname' ), ENT_QUOTES );
 
 			/**
 			 * Email Headers ( Reply To and Content Type )
@@ -356,7 +356,7 @@ if ( ! class_exists( 'ISP_Payment_Handler' ) ) {
 			 * The blogname option is escaped with esc_html on the way into the database in sanitize_option
 			 * we want to reverse this for the plain text arena of emails.
 			 */
-			$website_name = wp_specialchars_decode( get_option( 'blogname' ), ENT_QUOTES );
+			//$website_name = wp_specialchars_decode( get_option( 'blogname' ), ENT_QUOTES );
 
 			/**
 			 * Email Headers ( Reply To and Content Type )
@@ -416,7 +416,7 @@ if ( ! class_exists( 'ISP_Payment_Handler' ) ) {
 			     && wp_verify_nonce( $_POST[ 'isp_shortcode_nonce' ], 'isp-shortcode-nonce' )
 			) {
 
-				$isp_options = get_option( 'isp_settings' );
+				//$isp_options = get_option( 'isp_settings' );
 
 				// Stripe Token
 				$this->stripe_token = $_POST[ 'stripeToken' ];

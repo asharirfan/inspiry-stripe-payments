@@ -72,7 +72,7 @@ if ( ! class_exists( 'ISP_Payment_Button' ) ) {
 			// Button Label.
 			$button_label = $isp_options[ 'button_label' ];
 			if ( empty( $button_label ) ) {
-				$button_label = 'Pay with Card';
+				$button_label = __( 'Pay with Card', 'inspiry-stripe-payments' );
 			}
 
 			?>
@@ -81,12 +81,12 @@ if ( ! class_exists( 'ISP_Payment_Button' ) ) {
 					src="https://checkout.stripe.com/checkout.js" class="stripe-button"
 					data-key="<?php echo esc_attr( $publishable_key ); ?>"
 					data-amount="<?php echo esc_attr( $amount ); ?>"
-					data-name="<?php echo get_bloginfo( 'name' ); ?>"
+					data-name="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>"
 					data-currency="<?php echo esc_attr( $currency_code ); ?>"
-					data-description="<?php _e( 'Property Payment', 'inspiry-stripe-payments' ); ?>"
+					data-description="<?php esc_html_e( 'Property Payment', 'inspiry-stripe-payments' ); ?>"
 					data-locale="auto"
 					data-billing-address="true"
-					data-label="<?php _e( $button_label, 'inspiry-stripe-payments' ); ?>">
+					data-label="<?php echo esc_attr( $button_label ); ?>">
 			</script>
 			<input type="hidden" name="action" value="isp_payment"/>
 			<input type="hidden" name="amount" value="<?php echo esc_attr( $amount ); ?>"/>

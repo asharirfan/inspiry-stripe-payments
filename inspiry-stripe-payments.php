@@ -100,7 +100,7 @@ if ( ! class_exists( 'Inspiry_Stripe_Payments' ) ) :
 			$this->define_constants();
 			$this->plugin_name = 'inspiry-stripe-payments';
 			$this->isp_options = get_option( 'isp_settings' );
-			$this->includes();
+			$this->load_files();
 		}
 
 		/**
@@ -123,7 +123,7 @@ if ( ! class_exists( 'Inspiry_Stripe_Payments' ) ) :
 		 *
 		 * @since 1.0.0
 		 */
-		public function includes() {
+		public function load_files() {
 
 			/**
 			 * Initialize settings if in admin

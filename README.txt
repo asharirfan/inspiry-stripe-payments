@@ -1,21 +1,23 @@
 # Inspiry Stripe Payments
-Contributors: mrasharirfan
-Tags: E-commerce, Payments, Stripe, Stripe Checkout
+Contributors: inspirythemes, mrasharirfan, saqibsarwar
+Tags: stripe, inspiry, payments, checkout
 Requires at least: 4.7
-Tested up to: 4.7
+Tested up to: 4.7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-A simple, light weight plugin to add stripe payment system to your WordPress site using a simple shortcode.
+A lightweight plugin to add stripe payments support to real estate themes by Inspiry Themes.
 
 == Description ==
 
-This plugin provides a simple way to introduce stripe checkout payment system in your WordPress site using shortcode. For shortcode details, please consult the documentation below.
+This plugin can also be used with any other WordPress website to add stripe payments using easy to use shortcodes.
+
+For shortcode details, please consult the documentation below.
 
 ### Features
 
-* Easily add Stripe Checkout Button to any post type using simple shortcode.
-* Add Stripe Checkout to Real Homes theme by [Inspiry Themes](https://inspirythemes.com)
+* Add Stripe payment support for real estate themes by [Inspiry Themes](https://inspirythemes.com)
+* Easily add Stripe payment button in your posts or pages using simple shortcode.
 
 ### Documentation
 
@@ -61,10 +63,6 @@ This plugin provides a simple way to introduce stripe checkout payment system in
 1. Unzip the downloaded package
 1. Upload `inspiry-stripe-payments` to the `/wp-content/plugins/` directory
 1. Activate the `Inspiry Stripe Payments` through the 'Plugins' menu in WordPress
-
-== Frequently Asked Questions ==
-
-== Screenshots ==
 
 == Changelog ==
 

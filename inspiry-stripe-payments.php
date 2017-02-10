@@ -2,8 +2,8 @@
 /**
  * Plugin Name:         Inspiry Stripe Payments
  * Plugin URI:          https://github.com/InspiryThemes/inspiry-stripe-payments
- * Description:         A light weight plugin to add stripe payment system to your WordPress site using a simple shortcode.
- * Author:              mrasharirfan, inspirythemes
+ * Description:         A lightweight plugin to add stripe payments support to real estate themes from Inspiry Themes.
+ * Author:              Inspiry Themes
  * Author URI:          https://inspirythemes.com
  * Contributors:        inspirythemes, mrasharirfan, saqibsarwar
  * Version:             1.0.0

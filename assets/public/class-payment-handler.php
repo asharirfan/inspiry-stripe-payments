@@ -304,23 +304,24 @@ if ( ! class_exists( 'ISP_Payment_Handler' ) ) {
 			$headers[] = "Content-Type: text/html; charset=UTF-8";
 			$headers   = apply_filters( 'isp_payment_successful_header', $headers );
 
-			$subject = __( 'Payment Received', 'inspiry-stripe-payments' );
-			$message = sprintf( '%s', $subject ) . "<br/><br/>";
+			$subject = __( 'Payment Processed', 'inspiry-stripe-payments' );
+			$message = $subject . "<br/><br/>";
 
 			if ( ! empty( $property_id ) ) {
 
 				// Get property.
 				$property      = get_post( $property_id );
+
+				// Property title
 				$property_name = $property->post_title;
+				$message .= sprintf( __( 'Payment for property [%s] has been processed successfully.', 'inspiry-stripe-payments' ), $property_name ) . "<br/><br/>";
 
 				// Property Preview Link.
 				$preview_link = set_url_scheme( get_permalink( $property_id ) );
 				$preview_link = esc_url( apply_filters( 'preview_post_link', add_query_arg( 'preview', 'true', $preview_link ) ) );
-
-				$message .= sprintf( __( 'Payment for property %s has been received successfully via Stripe.', 'inspiry-stripe-payments' ), $property_name ) . "<br/><br/>";
 				if ( ! empty( $preview_link ) ) {
-					$message .= __( 'You can preview it here : ', 'inspiry-stripe-payments' );
-					$message .= '<a target="_blank" href="' . $preview_link . '">' . $property_name . '</a>';
+					$message .= __( 'You can preview it here:', 'inspiry-stripe-payments' );
+					$message .= '<a target="_blank" href="' . $preview_link . '">&nbsp;' . $property_name . '</a>';
 					$message .= "<br/><br/>";
 				}
 
@@ -329,7 +330,7 @@ if ( ! class_exists( 'ISP_Payment_Handler' ) ) {
 				if ( isset( $this->customer_details[ 'name' ] ) && ! empty( $this->customer_details[ 'name' ] ) ) {
 					$message .= sprintf( __( 'Hi %s,', 'inspiry-stripe-payments' ), $this->customer_details[ 'name' ] ) . "<br/><br/>";
 				}
-				$message .= sprintf( __( 'Your payment has been received successfully via Stripe.', 'inspiry-stripe-payments' ) ) . "<br/><br/>";
+				$message .= sprintf( __( 'Your payment has been processed successfully.', 'inspiry-stripe-payments' ) ) . "<br/><br/>";
 
 			}
 
@@ -366,22 +367,23 @@ if ( ! class_exists( 'ISP_Payment_Handler' ) ) {
 			$headers   = apply_filters( 'isp_payment_successful_header', $headers );
 
 			$subject = __( 'Payment Submitted', 'inspiry-stripe-payments' );
-			$message = sprintf( '%s', $subject ) . "<br/><br/>";
+			$message = $subject . "<br/><br/>";
 
 			if ( ! empty( $property_id ) ) {
 
 				// Get property.
 				$property      = get_post( $property_id );
+
+				// Property title
 				$property_name = $property->post_title;
+				$message .= sprintf( __( 'Payment for property %s has been submitted successfully via Stripe.', 'inspiry-stripe-payments' ), $property_name ) . "<br/><br/>";
 
 				// Property Preview Link.
 				$preview_link = set_url_scheme( get_permalink( $property_id ) );
 				$preview_link = esc_url( apply_filters( 'preview_post_link', add_query_arg( 'preview', 'true', $preview_link ) ) );
-
-				$message .= sprintf( __( 'Payment for property %s has been submitted successfully via Stripe.', 'inspiry-stripe-payments' ), $property_name ) . "<br/><br/>";
 				if ( ! empty( $preview_link ) ) {
-					$message .= __( 'You can preview it here : ', 'inspiry-stripe-payments' );
-					$message .= '<a target="_blank" href="' . $preview_link . '">' . $property_name . '</a>';
+					$message .= __( 'You can preview it here:', 'inspiry-stripe-payments' );
+					$message .= '<a target="_blank" href="' . $preview_link . '">&nbsp;' . $property_name . '</a>';
 					$message .= "<br/><br/>";
 				}
 

@@ -71,7 +71,7 @@ if ( ! class_exists( 'ISP_Payment_Handler' ) ) {
 
 			// include Stripe library if it is not already exists.
 			if ( ! class_exists( '\Stripe\Stripe' ) ) {
-				include_once( ISP_BASE_DIR . '/assets/stripe/stripe-init.php' );
+				include_once( ISP_BASE_DIR . '/stripe/stripe-init.php' );
 			}
 
 			add_action( 'init', array( $this, 'isp_process_property_payments' ) );

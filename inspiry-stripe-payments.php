@@ -128,8 +128,8 @@ if ( ! class_exists( 'Inspiry_Stripe_Payments' ) ) :
 			/**
 			 * Initialize settings if in admin
 			 */
-			if ( is_admin() && file_exists( ISP_BASE_DIR . '/assets/includes/class-isp-settings.php' ) ) {
-				include_once( ISP_BASE_DIR . '/assets/includes/class-isp-settings.php' );
+			if ( is_admin() && file_exists( ISP_BASE_DIR . '/includes/class-isp-settings.php' ) ) {
+				include_once( ISP_BASE_DIR . '/includes/class-isp-settings.php' );
 			}
 			
 			/**
@@ -137,8 +137,8 @@ if ( ! class_exists( 'Inspiry_Stripe_Payments' ) ) :
 			 *
 			 * Class file for shortcodes of ISP.
 			 */
-			if ( file_exists( ISP_BASE_DIR . '/assets/public/class-isp-shortcodes.php' ) ) {
-				include_once( ISP_BASE_DIR . '/assets/public/class-isp-shortcodes.php' );
+			if ( file_exists( ISP_BASE_DIR . '/public/class-isp-shortcodes.php' ) ) {
+				include_once( ISP_BASE_DIR . '/public/class-isp-shortcodes.php' );
 			}
 
 			/**
@@ -146,8 +146,8 @@ if ( ! class_exists( 'Inspiry_Stripe_Payments' ) ) :
 			 *
 			 * Class file for payment button for properties.
 			 */
-			if ( file_exists( ISP_BASE_DIR . '/assets/public/class-isp-button.php' ) ) {
-				include_once( ISP_BASE_DIR . '/assets/public/class-isp-button.php' );
+			if ( file_exists( ISP_BASE_DIR . '/public/class-isp-button.php' ) ) {
+				include_once( ISP_BASE_DIR . '/public/class-isp-button.php' );
 			}
 
 			/**
@@ -155,8 +155,8 @@ if ( ! class_exists( 'Inspiry_Stripe_Payments' ) ) :
 			 *
 			 * Class file for payment handler functions.
 			 */
-			if ( file_exists( ISP_BASE_DIR . '/assets/public/class-payment-handler.php' ) ) {
-				include_once( ISP_BASE_DIR . '/assets/public/class-payment-handler.php' );
+			if ( file_exists( ISP_BASE_DIR . '/public/class-payment-handler.php' ) ) {
+				include_once( ISP_BASE_DIR . '/public/class-payment-handler.php' );
 			}
 
 		}

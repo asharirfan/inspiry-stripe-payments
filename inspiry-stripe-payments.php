@@ -5,7 +5,7 @@
  * Description:         A lightweight plugin to add stripe payments support to real estate themes from Inspiry Themes.
  * Author:              Inspiry Themes
  * Author URI:          https://inspirythemes.com
- * Contributors:        inspirythemes, mrasharirfan, saqibsarwar
+ * Contributors:        inspirythemes, saqibsarwar
  * Version:             1.0.0
  * License:             GPL-2.0+
  * License URI:         http://www.gnu.org/licenses/gpl-2.0.txt

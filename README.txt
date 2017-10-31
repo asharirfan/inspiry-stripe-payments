@@ -1,5 +1,5 @@
 # Inspiry Stripe Payments
-Contributors: inspirythemes, mrasharirfan, saqibsarwar
+Contributors: inspirythemes, saqibsarwar
 Tags: stripe, inspiry, payments, checkout
 Requires at least: 4.7
 Tested up to: 4.7.2

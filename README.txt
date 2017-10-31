@@ -1,9 +1,9 @@
 # Inspiry Stripe Payments
 Contributors: inspirythemes, saqibsarwar
 Tags: stripe, inspiry, payments, checkout
-Requires at least: 4.7
-Tested up to: 4.7.2
-Stable tag: 1.0.0
+Requires at least: 4.8
+Tested up to: 4.8.2
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -66,6 +66,9 @@ For shortcode details, please consult the documentation below.
 1. Activate the `Inspiry Stripe Payments` through the 'Plugins' menu in WordPress
 
 == Changelog ==
+
+= 1.0.1 =
+* Basic Testing and Improvements
 
 = 1.0.0 =
 * Initial Release
